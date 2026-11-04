@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.foliamusic.app",
+      "sha256_cert_fingerprints": [
+        "D9:E7:8E:96:F5:2E:31:15:A2:23:99:BA:CA:6B:DA:A5:54:79:3B:F2:05:AC:E2:06:88:A6:4C:A3:36:81:C1:A0"
+      ]
+    }
+  }
+]

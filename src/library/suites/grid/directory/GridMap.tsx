@@ -137,7 +137,7 @@ const MapCard = React.memo<{
                             <img
                                 src={getSizedCoverUrl(item.coverUrl, 512)}
                                 alt={displayName}
-                                loading="lazy"
+                                loading="eager"
                                 decoding="async"
                                 ref={(el) => {
                                     if (el && el.complete) {
@@ -496,7 +496,7 @@ export const GridMap: React.FC<GridMapProps> = ({
     }, [containerSize, layoutConfig]);
 
     const renderRadius = useMemo(() => (
-        clipRadius + Math.max(layoutConfig.spacingX, layoutConfig.spacingY) * 1.5
+        clipRadius + Math.max(layoutConfig.spacingX, layoutConfig.spacingY) * 3
     ), [clipRadius, layoutConfig.spacingX, layoutConfig.spacingY]);
 
     const renderRing = useMemo(() => (

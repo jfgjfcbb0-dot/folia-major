@@ -211,7 +211,7 @@ const resolveGridViewCardBox = (width: number) => {
     }
 };
 
-const GRID_VIEW_RENDER_BUFFER_FACTOR = 0.75;
+const GRID_VIEW_RENDER_BUFFER_FACTOR = 3;
 const GRID_VIEW_CARD_VISIBILITY_BUFFER = 96;
 const TRACK_REMOVAL_ANIMATION_MS = 460;
 const TRACK_REMOVAL_BEZIER = [0.22, 0.8, 0.24, 1] as const;
@@ -372,7 +372,7 @@ export const GridView: React.FC<GridViewProps> = ({
         const { cardWidth, cardHeight } = layoutConfig;
         const viewportRadius = Math.sqrt((width / 2) ** 2 + (height / 2) ** 2);
         const cardRadius = Math.sqrt(cardWidth ** 2 + cardHeight ** 2) / 2;
-        return viewportRadius + cardRadius + 200; // 200px buffer to prevent visual pop-in during fast drags
+        return viewportRadius + cardRadius + 600; // 600px buffer to prevent visual pop-in during fast drags
     }, [containerSize, layoutConfig]);
 
     const renderRadius = useMemo(() => (
@@ -1819,8 +1819,8 @@ export const GridView: React.FC<GridViewProps> = ({
                             <div
                                 {...(fullBleedCover ? {} : { [MORPH_TARGET_ATTR]: '' })}
                                 className={fullBleedCover
-                                    ? 'absolute inset-0 bg-zinc-200/60 dark:bg-zinc-800/60'
-                                    : 'relative w-full aspect-square rounded-lg overflow-hidden bg-zinc-200/60 dark:bg-zinc-800/60 shadow-inner'}
+                                    ? 'absolute inset-0 bg-[#09090b]'
+                                    : 'relative w-full aspect-square rounded-lg overflow-hidden bg-[#09090b] shadow-inner'}
                             >
                                 {standIn.coverUrl && (
                                     <img src={standIn.coverUrl} alt="" draggable={false} decoding="sync" className="absolute inset-0 h-full w-full object-cover" />
